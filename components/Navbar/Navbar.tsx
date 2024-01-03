@@ -9,8 +9,11 @@ import {
   PlusSquareIcon,
   FillPlusSquare,
 } from '../ui/icons';
+import LoginButton from '../LoginButton';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 export default function Navbar() {
+  const { data: session } = useSession();
   const pathname = usePathname();
   const menu = [
     {
@@ -28,16 +31,14 @@ export default function Navbar() {
       icon: <PlusSquareIcon />,
       clickedIcon: <FillPlusSquare />,
     },
-    {
-      href: '/signin',
-      icon: 'Sign in',
-      clickedIcon: 'Sign in',
-    },
   ];
   return (
     <>
-      <section className='flex mx-8 my-4'>
-        <Link href='/' className='text-4xl mr-auto'>
+      <section className='flex px-8 py-8 items-center justify-center'>
+        <Link
+          href='/'
+          className='text-4xl mr-auto transition ease-in-out hover:-translate-y-1'
+        >
           밀크티
         </Link>
         <nav>
@@ -52,6 +53,11 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            {session ? (
+              <LoginButton text={'로그아웃'} onClick={() => signOut()} />
+            ) : (
+              <LoginButton text={'로그인'} onClick={() => signIn()} />
+            )}
           </ul>
         </nav>
       </section>
