@@ -37,7 +37,7 @@ export default function Navbar() {
       <section className='flex px-8 py-8 items-center justify-center'>
         <Link
           href='/'
-          className='text-4xl mr-auto transition ease-in-out hover:-translate-y-1'
+          className='text-4xl font-bold mr-auto transition ease-in-out hover:-translate-y-1 px-8 py-2 rounded-tl-[4rem] rounded-br-[4rem] bg-gradient-to-bl from-[#71C9CE] to-[#FFE5FF] '
         >
           밀크티
         </Link>

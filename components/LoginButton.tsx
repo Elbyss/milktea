@@ -1,17 +1,24 @@
 type Props = {
   text: string;
   onClick: () => void;
+  size: 'small' | 'big';
 };
 
-export default function LoginButton({ text, onClick }: Props) {
+export default function LoginButton({ text, onClick, size = 'small' }: Props) {
   return (
     <>
-      <button
-        onClick={onClick}
-        className='rounded-md bg-gradient-to-bl from-fuchsia-600 via-rose-500 to-amber-300 transition ease-in-out hover:-translate-y-1 p-1'
+      <div
+        className={`rounded-md bg-gradient-to-bl from-[#71C9CE] to-[#FFE5FF] transition ease-in-out hover:-translate-y-1 p-1
+        ${size === 'big' ? 'p-2' : 'p-1'}`}
       >
-        <div className='bg-white rounded-sm hover:opacity-80 p-1'>{text}</div>
-      </button>
+        <button
+          className={`bg-white rounded-sm hover:opacity-70 p-1 transition ease-in-out
+          ${size === 'big' ? 'p-2 text-2xl' : 'p-1'}`}
+          onClick={onClick}
+        >
+          {text}
+        </button>
+      </div>
     </>
   );
 }
