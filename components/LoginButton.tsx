@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
+
 type Props = {
   text: string;
   onClick: () => void;
-  size: 'small' | 'big';
+  size?: 'small' | 'big';
 };
 
 export default function LoginButton({ text, onClick, size = 'small' }: Props) {
