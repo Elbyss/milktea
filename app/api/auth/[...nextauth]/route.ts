@@ -1,8 +1,8 @@
 import { adduser } from '@/services/user';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import NextAuth, { AuthOptions, NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
-export const nextOptions: NextAuthOptions = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_OAUTH_ID || '',
@@ -39,6 +39,7 @@ export const nextOptions: NextAuthOptions = NextAuth({
   pages: {
     signIn: '/signin',
   },
-});
+};
+const nextOptions: NextAuthOptions = NextAuth(authOptions);
 
 export { nextOptions as GET, nextOptions as POST };
