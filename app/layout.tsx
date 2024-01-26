@@ -3,7 +3,8 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
 import { SessionProvider } from 'next-auth/react';
-import AuthContext from './context/AuthContext';
+import AuthContext from '../context/AuthContext';
+import SwrConfigContext from '@/context/SwrConfigContext';
 
 const sans = Open_Sans({ subsets: ['latin'] });
 
@@ -24,7 +25,9 @@ export default function RootLayout({
           <header className='sticky top-0 bg-white z-50 border-b'>
             <Navbar />
           </header>
-          {children}
+          <main className='flex w-full justify-center min-h-full'>
+            <SwrConfigContext>{children}</SwrConfigContext>
+          </main>
         </AuthContext>
       </body>
     </html>
