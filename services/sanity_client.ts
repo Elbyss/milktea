@@ -8,12 +8,12 @@ export const client = createClient({
   token: process.env.SANITY_SECRET_TOKEN,
 });
 
-const doc = {
-  _id: 'my-bike',
-  _type: 'bike',
-  name: 'Sanity Tandem Extraordinaire',
-  seats: 2,
-};
-client.createIfNotExists(doc).then((res) => {
-  console.log('Bike was created (or was already present)');
-});
+// const doc = {
+//   _id: 'my-bike',
+//   _type: 'bike',
+//   name: 'Sanity Tandem Extraordinaire',
+//   seats: 2,
+// };
+// client.createIfNotExists(doc).then((res) => {
+//   console.log('Bike was created (or was already present)');
+// });

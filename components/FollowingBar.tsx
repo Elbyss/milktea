@@ -34,7 +34,7 @@ export default function FollowingBar() {
                 href={`/user/${username}`}
               >
                 <Avatar size='normal' highlight image={image} />
-                <p className='text-sm text-ellipsis text-center overflow-hidden w-full'>
+                <p className='text-sm text-ellipsis text-center w-full'>
                   {username}
                 </p>
               </Link>

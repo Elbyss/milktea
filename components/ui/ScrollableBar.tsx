@@ -16,7 +16,10 @@ export default function ScrollableBar({
     },
   };
   return (
-    <Carousel containerClass='flex gap-4 w-full' responsive={responsive}>
+    <Carousel
+      containerClass='flex gap-4 w-full backdrop-blur-none'
+      responsive={responsive}
+    >
       {children}
     </Carousel>
   );
