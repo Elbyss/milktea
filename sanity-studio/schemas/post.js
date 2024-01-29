@@ -60,7 +60,7 @@ export default {
     select: {
       title: 'comments.0.comment',
       authorName: 'author.name',
-      authorUsername: 'author.name',
+      authorUsername: 'author.username',
       media: 'photo',
     },
     prepare(selection) {
