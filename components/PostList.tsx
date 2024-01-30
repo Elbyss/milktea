@@ -10,7 +10,11 @@ export default function PostList() {
   return (
     <>
       <section className='w-full  flex flex-col p-4'>
-        {loading && <GridLoader color='blue' />}
+        {loading && (
+          <div className='text-center mt-3'>
+            <GridLoader color='blue' />
+          </div>
+        )}
         {data &&
           data.map((post) => (
             <article key={post.id} className='h-full rounded-lg basis-3/4 mb-4'>

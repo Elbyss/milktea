@@ -33,7 +33,7 @@ export default function FollowingBar() {
                 className='flex flex-col items-center w-20 p-2'
                 href={`/user/${username}`}
               >
-                <Avatar size='normal' highlight image={image} />
+                <Avatar size='small' highlight image={image} />
                 <p className='text-sm text-ellipsis text-center w-full'>
                   {username}
                 </p>
