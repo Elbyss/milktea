@@ -1,12 +1,13 @@
+'use client';
 import { SimplePost } from '@/model/post';
-import Avatar from './Avatar';
 import Image from 'next/image';
-import { IoIosHeartEmpty } from 'react-icons/io';
-import parseDate from '@/util/date';
-import { CiBookmark } from 'react-icons/ci';
 import CommentForm from './CommentForm';
 import ActionBar from './ActionBar';
 import WriterActionBar from './WriterActionBar';
+import { useState } from 'react';
+import ModalPortal from './ModalPortal';
+import PostModal from './PostModal';
+import PostDetail from './PostDetail';
 type Props = {
   post: SimplePost;
   priority?: boolean;
@@ -14,6 +15,8 @@ type Props = {
 
 export default function PostListCard({ post, priority = false }: Props) {
   const { userImage, username, image, createdAt, likes, text } = post;
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
       <div>
@@ -30,10 +33,18 @@ export default function PostListCard({ post, priority = false }: Props) {
             width={600}
             height={600}
             priority={priority}
+            onClick={() => setOpenModal(true)}
           />
         </figure>
         <ActionBar likes={likes} text={text} username={username} />
         <CommentForm />
+        {openModal && (
+          <ModalPortal>
+            <PostModal onClose={() => setOpenModal(false)}>
+              <PostDetail post={post} />
+            </PostModal>
+          </ModalPortal>
+        )}
       </div>
     </>
   );
