@@ -1,6 +1,6 @@
 'use client';
 import useSWR from 'swr';
-import Avatar from './Avatar';
+import Avatar from './Post/Avatar';
 import { DetailUser } from '@/model/user';
 import { PropagateLoader } from 'react-spinners';
 import Link from 'next/link';

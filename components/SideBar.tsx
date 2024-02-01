@@ -1,5 +1,5 @@
 import { User } from '@/model/user';
-import Avatar from './Avatar';
+import Avatar from './Post/Avatar';
 
 type Props = {
   user: User;

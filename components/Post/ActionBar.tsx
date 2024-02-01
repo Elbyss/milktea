@@ -4,7 +4,7 @@ import { IoIosHeartEmpty } from 'react-icons/io';
 type Props = {
   likes: string[];
   username: string;
-  text: string;
+  text?: string;
 };
 export default function ActionBar({ likes, username, text }: Props) {
   return (

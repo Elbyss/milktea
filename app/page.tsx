@@ -1,7 +1,7 @@
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import Avatar from '@/components/Avatar';
+import Avatar from '@/components/Post/Avatar';
 import FollowingBar from '@/components/FollowingBar';
-import PostList from '@/components/PostList';
+import PostList from '@/components/Post/PostList';
 import SideBar from '@/components/SideBar';
 import { getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';

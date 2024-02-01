@@ -11,7 +11,7 @@ import {
 } from '../ui/icons';
 import LoginButton from '../LoginButton';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import Avatar from '../Avatar';
+import Avatar from '../Post/Avatar';
 
 export default function Navbar() {
   const { data: session } = useSession();

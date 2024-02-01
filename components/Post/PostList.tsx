@@ -3,7 +3,7 @@ import { SimplePost } from '@/model/post';
 import { GridLoader } from 'react-spinners';
 import useSWR from 'swr';
 import PostListCard from './PostListCard';
-import GridSpinner from './GridSpinner';
+import GridSpinner from '../GridSpinner';
 import { createPortal } from 'react-dom';
 
 export default function PostList() {
