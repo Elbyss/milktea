@@ -1,6 +1,7 @@
 import { adduser } from '@/services/user';
 import NextAuth, { AuthOptions, NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+import { redirect } from 'next/navigation';
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -11,6 +12,7 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async signIn({ user: { id, name, email, image } }) {
+      const redirectUrl = '/';
       // console.log(user);
       if (!email) {
         return false;

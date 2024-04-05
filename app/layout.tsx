@@ -11,13 +11,12 @@ const sans = Open_Sans({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: '밀크티',
   description: 'milkteaです',
+  icons: {
+    icon: '/img/96x96_22.png',
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={sans.className}>
       <body className='w-full max-w-screen-xl overflow-auto mx-auto'>

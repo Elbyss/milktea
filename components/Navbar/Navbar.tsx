@@ -1,14 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  HomeIcon,
-  FillHomeIcon,
-  SearchLine,
-  FillSearchIcon,
-  PlusSquareIcon,
-  FillPlusSquare,
-} from '../ui/icons';
+import { HomeIcon, FillHomeIcon, SearchLine, FillSearchIcon, PlusSquareIcon, FillPlusSquare } from '../ui/icons';
 import LoginButton from '../LoginButton';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Avatar from '../Post/Avatar';
@@ -47,13 +40,8 @@ export default function Navbar() {
         <nav className=''>
           <ul className='flex text-2xl gap-8 items-center sm:text-4xl'>
             {menu.map(({ href, icon, clickedIcon }) => (
-              <li
-                key={href}
-                className='transition ease-in-out hover:-translate-y-1'
-              >
-                <Link href={href}>
-                  {pathname === href ? clickedIcon : icon}
-                </Link>
+              <li key={href} className='transition ease-in-out hover:-translate-y-1'>
+                <Link href={href}>{pathname === href ? clickedIcon : icon}</Link>
               </li>
             ))}
             {user && (
@@ -63,17 +51,9 @@ export default function Navbar() {
             )}
 
             {session ? (
-              <LoginButton
-                text={'로그아웃'}
-                size='small'
-                onClick={() => signOut()}
-              />
+              <LoginButton text={'로그아웃'} size='small' onClick={() => signOut({ callbackUrl: '/upload' })} />
             ) : (
-              <LoginButton
-                text={'로그인'}
-                size='small'
-                onClick={() => signIn()}
-              />
+              <LoginButton text={'로그인'} size='small' onClick={() => signIn('google', { callbackUrl: '/' })} />
             )}
           </ul>
         </nav>
